@@ -3,7 +3,7 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 import Topics from '../components/Topics';
-import Exercises from '../components/Exercises';
+
 
 
 export default class LoginYes extends Component {
@@ -24,7 +24,7 @@ export default class LoginYes extends Component {
                 <button onClick={() => this.cikis()}>cik</button>
                 <div>
                    <Topics/> 
-                   <Exercises/>
+                   
                 </div>
             </div>
         )

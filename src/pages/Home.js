@@ -25,7 +25,7 @@ function Home (){
                    <ul>
                    {
                        topics.map(({id,data})=>(                          
-                               <li key={id}>{data.name} {data.description}</li>                          
+                               <li key={id}>{data.name} <img src={data.image}></img> {data.description}</li>                          
                        ))
                    }
                    </ul>
