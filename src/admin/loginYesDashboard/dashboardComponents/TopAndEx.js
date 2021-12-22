@@ -1,40 +1,35 @@
-import { addDoc, collection, doc, setDoc } from 'firebase/firestore'
-import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import React, { useState } from 'react'
-import db, { storage } from '../firebase/firebase'
-import Lessons from '../pages/Lessons'
+import { addDoc, collection} from 'firebase/firestore'
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
+import db, { storage } from '../../../firebase/firebase'
 
+function TopAndEx({ language }) {
 
-function Topics() {
     const [topic, setTopic] = useState({
         name: '',
         image: '',
         description: ''
     })
-    const [language, setLanguage] = useState('English')
     const [topOrEx, setTopOrEx] = useState('topic')
     const [progres, setProgres] = useState(0)
     const [imageUrl, setImageUrl] = useState('')
     const [disabled, setDisabled] = useState(true)
+
     function handleChange(e) {
         topic[e.target.id] = e.target.value
         setTopic({ ...topic, topic })
-        if(topic.name !== '' && imageUrl !== '' && topic.description !== ''){
+        if (topic.name !== '' && imageUrl !== '' && topic.description !== '') {
             setDisabled(false)
-        }else{
+        } else {
             setDisabled(true)
         }
-            
     }
-    function chooseLangTopic(e) {
-        const selectedLang = e.target.value
-        setLanguage(selectedLang)
 
-    }
     function chooseTopOrEx(e) {
         const selectedTopOrEx = e.target.value
         setTopOrEx(selectedTopOrEx)
     }
+
     const imageHandler = (e) => {
         e.preventDefault()
         const file = e.target[0].files[0]
@@ -56,8 +51,6 @@ function Topics() {
             }
         )
     }
-
-
 
     const add = async (event) => {
         event.preventDefault()
@@ -108,7 +101,6 @@ function Topics() {
                 }
                 break
         }
-
         setTopic({
             name: '',
             image: '',
@@ -118,17 +110,9 @@ function Topics() {
         setDisabled(true)
         setProgres(0)
     }
-
     return (
         <div>
-            <div>
-                <select id="languages" size="3" onChange={(e) => chooseLangTopic(e)} value={language}>
-                    <option id="English" value="English">English</option>
-                    <option id="Dutch" value="Dutch">Dutch</option>
-                    <option id="Turkish" value="Turkish">Turkish</option>
-                </select>
-            </div>
-            <h3>chosen language {language}</h3 >
+            <h1>language {language}</h1>
             <div>
                 <select id="toporex" size="2" onChange={(e) => chooseTopOrEx(e)} value={topOrEx}>
                     <option id="topic" value="topic">Topic</option>
@@ -150,11 +134,8 @@ function Topics() {
                 <input required type='textarea' id='description' value={topic.description} onChange={handleChange}></input>
                 <button disabled={disabled} onClick={add}>ekle</button>
             </div>
-            <Lessons language={language}/>
-
-
         </div>
     )
 }
 
-export default Topics
+export default TopAndEx

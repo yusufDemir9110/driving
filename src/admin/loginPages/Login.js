@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { useState } from 'react';
-import { auth } from '../firebase/firebase';
+import { auth } from '../../firebase/firebase';
 import LoginYes from './LoginYes';
 import LoginNo from './LoginNo';
 

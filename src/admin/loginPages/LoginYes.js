@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { signOut } from 'firebase/auth';
-import { auth } from '../firebase/firebase';
+import { auth } from '../../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
-import Topics from '../components/Topics';
+import Dashboard from '../loginYesDashboard/dashboard/Dashboard';
 
 
 
@@ -23,7 +23,7 @@ export default class LoginYes extends Component {
                 <h1>giris yappildi</h1>
                 <button onClick={() => this.cikis()}>cik</button>
                 <div>
-                   <Topics/> 
+                   <Dashboard/> 
                    
                 </div>
             </div>
