@@ -7,6 +7,7 @@ import { Container } from 'reactstrap';
 import HomeDutch from './pages/HomeDutch';
 import HomeTurkish from './pages/HomeTurkish';
 import LessonPage from './pages/LessonPage';
+import ExercisePage from './pages/ExercisePage';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route exact path='/Tr' element={<HomeTurkish />} />
           <Route exact path='/admin5874' element={<Login />} />
           <Route exact path='/lp' element={<LessonPage />} />
+          <Route exact path='/ep' element={<ExercisePage />} />
         </Routes>
       </Container>
 

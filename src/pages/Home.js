@@ -15,6 +15,14 @@ function Home (){
                 }))
             )            
         )
+        onSnapshot(collection(db,'exercises-data'),snapshot=>
+            setTopics(
+                snapshot.docs.map(doc=>({
+                    id:doc.id,
+                    data:doc.data()
+                }))
+            )            
+        )
           
     },[])
    
@@ -32,7 +40,18 @@ function Home (){
                        ))
                    }
                    </ul>
-               </div>               
+               </div>   
+               <div>
+                   <ul>
+                   {
+                       exercises.map(({id,data})=>(
+                            <Link to={'/ep'} state={{state:data.name}}>
+                                <li key={id}>{data.name} <img src={data.image}></img> {data.description}</li>
+                            </Link>                                                                                   
+                       ))
+                   }
+                   </ul>
+               </div>            
             </div>
         )
     }
