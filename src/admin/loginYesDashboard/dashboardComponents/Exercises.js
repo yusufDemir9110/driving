@@ -4,31 +4,31 @@ import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import db, { storage } from '../../../firebase/firebase'
 
 function Exercises({ language }) {
-   
+
     const [exercise, setExercise] = useState({
-        topic:'',
+        topic: '',
         head: '',
         question: '',
         image: '',
-        rightOption:'',
-        wrongOptions:['','','']
+        rightOption: '',
+        wrongOptions: ''
     })
-    const [disabled, setDisabled] = useState(true)   
+    const [disabled, setDisabled] = useState(true)
     const [progres, setProgres] = useState(0)
     const [imageUrl, setImageUrl] = useState('')
 
     function handleChange(e) {
         exercise[e.target.id] = e.target.value
         setExercise({ ...exercise, exercise })
-        
+
         if (imageUrl !== '' && exercise.question !== '' && exercise.head !== '') {
             setDisabled(false)
         } else {
             setDisabled(true)
         }
-        
+
     }
-    
+
 
     const imageHandler = (e) => {
         e.preventDefault()
@@ -53,42 +53,51 @@ function Exercises({ language }) {
 
     const add = async (event) => {
         event.preventDefault()
-        const newExercise=exercise.topic
+        const newExercise = exercise.topic
+      
         switch (language) {
             case 'English':
 
-                await addDoc(collection(db, 'exercises-data-'+newExercise), {
+                await addDoc(collection(db, 'exercises-data-' + newExercise), {
                     head: exercise.head,
                     image: imageUrl,
-                    question: exercise.question
+                    question: exercise.question,
+                    rightOption: exercise.rightOption,
+                    wrongOptions: exercise.wrongOptions
                 })
 
                 break
             case 'Dutch':
 
-                await addDoc(collection(db, 'exercises-data-Dutch'+newExercise), {
+                await addDoc(collection(db, 'exercises-data-Dutch-' + newExercise), {
                     head: exercise.head,
                     image: imageUrl,
-                    question: exercise.question
+                    question: exercise.question,
+                    rightOption: exercise.rightOption,
+                    wrongOptions: exercise.wrongOptions
                 })
 
 
                 break
             case 'Turkish':
 
-                await addDoc(collection(db, 'exercises-data-Turkish'+newExercise), {
+                await addDoc(collection(db, 'exercises-data-Turkish-' + newExercise), {
                     head: exercise.head,
                     image: imageUrl,
-                    question: exercise.question
+                    question: exercise.question,
+                    rightOption: exercise.rightOption,
+                    wrongOptions: exercise.wrongOptions
                 })
 
                 break
         }
         setExercise({
-            topic:'',
+            topic: '',
             head: '',
             image: '',
-            question: ''
+            question: '',
+            rightOption: '',
+            wrongOptions: ''
         })
         setImageUrl('')
         setDisabled(true)
@@ -99,8 +108,8 @@ function Exercises({ language }) {
         <div>
             <h1>exercises</h1>
             <h2>{language}</h2>
-            
-            
+
+
             <div>
                 <div>
                     <form onSubmit={imageHandler}>
@@ -113,6 +122,9 @@ function Exercises({ language }) {
                 <input required type='text' id='head' value={exercise.head} onChange={handleChange}></input>
                 <input required disabled type='url' id='image' value={imageUrl} onChange={handleChange}></input>
                 <input required type='textarea' id='question' value={exercise.question} onChange={handleChange}></input>
+                <input required type='text' id='rightOption' value={exercise.rightOption} onChange={handleChange}></input>
+                <input required type='text' id='wrongOptions' value={exercise.wrongOptions} onChange={handleChange}></input>
+                
                 <button disabled={disabled} onClick={add}>ekle</button>
             </div>
         </div>

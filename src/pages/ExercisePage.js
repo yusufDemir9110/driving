@@ -12,12 +12,13 @@ function ExercisePage() {
     let topicName = useLocation()
 
     const nextSlide = () => {
+        
         setCurrent(current === length - 1 ? 0 : current + 1)
     }
     const prevSlide = () => {
+        
         setCurrent(current === 0 ? length - 1 : current - 1)
     }
-
 
     useEffect(() => {
         onSnapshot(collection(db, 'exercises-data-' + topicName.state.state), snapshot =>
@@ -27,9 +28,10 @@ function ExercisePage() {
                     data: doc.data()
                 }))
             )
-
+        
         )
         console.log(topicName.state.state)
+  
     }, [])
 
     return (
@@ -48,7 +50,23 @@ function ExercisePage() {
                                     <div className='slide' >
                                         {data.head} 
                                         <img src={data.image}></img> 
-                                        {data.description}
+                                        {data.question}
+                                        <div>
+                                            {data.rightOption}
+                                        </div> 
+                                        <div>
+                                        
+                                            {(data.rightOption +','+ data.wrongOptions).split(',').sort(()=>0.5-Math.random()).map((option)=>
+                                            (
+                                                <button key={id}>{option}</button>
+                                            ))
+                                            
+                                            
+                                            }
+                                           
+                                            
+                                        </div> 
+                                        {index+1}
                                     </div>}
                                 
                             </div>

@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 
 import Lessons from '../dashboardComponents/Lessons'
 import TopAndEx from '../dashboardComponents/TopAndEx'
+import Exercises from '../dashboardComponents/Exercises'
 
 
 function Dashboard() {
@@ -28,7 +29,7 @@ function Dashboard() {
             <h3>chosen language {language}</h3 >
             <TopAndEx language={language}/>
             <Lessons language={language}/>
-
+            <Exercises language={language}/>
 
         </div>
     )

@@ -64,7 +64,7 @@ function Lessons({ language }) {
                 break
             case 'Dutch':
 
-                await addDoc(collection(db, 'lessons-data-Dutch'+newTopic), {
+                await addDoc(collection(db, 'lessons-data-Dutch-'+newTopic), {
                     head: lesson.head,
                     image: imageUrl,
                     description: lesson.description
@@ -74,7 +74,7 @@ function Lessons({ language }) {
                 break
             case 'Turkish':
 
-                await addDoc(collection(db, 'lessons-data-Turkish'+newTopic), {
+                await addDoc(collection(db, 'lessons-data-Turkish-'+newTopic), {
                     head: lesson.head,
                     image: imageUrl,
                     description: lesson.description

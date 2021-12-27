@@ -6,6 +6,7 @@ import {Link, useParams} from 'react-router-dom'
 function Home (){
     
     const[topics,setTopics] = useState([])
+    const[exercises,setExercises] = useState([])
     useEffect(()=>{
         onSnapshot(collection(db,'topics-data'),snapshot=>
             setTopics(
@@ -16,7 +17,7 @@ function Home (){
             )            
         )
         onSnapshot(collection(db,'exercises-data'),snapshot=>
-            setTopics(
+            setExercises(
                 snapshot.docs.map(doc=>({
                     id:doc.id,
                     data:doc.data()
@@ -29,7 +30,7 @@ function Home (){
         return (
             <div>
                <h1>HomeEnglish</h1>
-               
+               <h1>Lessons</h1>
                <div>
                    <ul>
                    {
@@ -40,7 +41,8 @@ function Home (){
                        ))
                    }
                    </ul>
-               </div>   
+               </div> 
+               <h1>Exercises</h1>  
                <div>
                    <ul>
                    {
