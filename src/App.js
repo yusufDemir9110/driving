@@ -8,8 +8,10 @@ import HomeDutch from './pages/HomeDutch';
 import HomeTurkish from './pages/HomeTurkish';
 import LessonPage from './pages/LessonPage';
 import ExercisePage from './pages/ExercisePage';
+import ExercisePageFinal from './pages/ExercisePageFinal';
 
 class App extends Component {
+  
   render() {
     return (
       <Container>
@@ -21,6 +23,7 @@ class App extends Component {
           <Route exact path='/admin5874' element={<Login />} />
           <Route exact path='/lp' element={<LessonPage />} />
           <Route exact path='/ep' element={<ExercisePage />} />
+          <Route exact path='/finalscore' element={<ExercisePageFinal />} />
         </Routes>
       </Container>
 
