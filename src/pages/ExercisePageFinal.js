@@ -42,6 +42,7 @@ function ExercisePageFinal() {
  
     return (
         <div>
+            <h1>finalPage</h1>
             <button onClick={calculateScore}>Calculate Score</button>
              {score}
              <button onClick={showAnalysis}>Analysis</button>

@@ -38,7 +38,7 @@ function Home() {
 
                     {
                         topics.map(({ id, data }) => (
-                            <Col xs='12' sm='6' md='4' lg='3'>
+                            <Col xs='12' sm='4' md='3' lg='2'>
                                 <Link to={'/lp'} state={{ state: data.name }}>
                                     
                                     <div key={id} className='topic' style={{ backgroundImage: 'url(' + data.image + ')' }}>
@@ -66,16 +66,37 @@ function Home() {
 
             </div>
             <h1>Exercises</h1>
-            <div>
-                <ul>
+            <div className='topic_section'>
+                <Row>
+
                     {
                         exercises.map(({ id, data }) => (
-                            <Link to={'/ep'} state={{ state: data.name }}>
-                                <li key={id}>{data.name} <img src={data.image}></img> {data.description}</li>
-                            </Link>
+                            <Col xs='12' sm='4' md='3' lg='2'>
+                                <Link to={'/ep'} state={{ state: data.name }}>
+                                    
+                                    <div key={id} className='topic' style={{ backgroundImage: 'url(' + data.image + ')' }}>
+                                        
+                                        <div className='topic_name'>{data.name}</div>
+                                        <div className='topic_desc_bg'>
+                                            <div className='topic_desc' id='topic_desc_1'>{data.description1}</div>
+                                            <div className='topic_desc' id='topic_desc_2'>{data.description2}</div>
+                                            <div className='topic_desc' id='topic_desc_3'>{data.description3}</div>
+                                            <div className='topic_desc' id='topic_desc_4'>{data.description4}</div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </Link>
+
+                            </Col>
                         ))
+
                     }
-                </ul>
+
+                </Row>
+
             </div>
         </div>
     )

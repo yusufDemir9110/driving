@@ -10,24 +10,29 @@ import LessonPage from './pages/LessonPage';
 import ExercisePage from './pages/ExercisePage';
 import ExercisePageFinal from './pages/ExercisePageFinal';
 import Footer from './components/Footer';
+import './App.css'
 
 class App extends Component {
-  
+
   render() {
     return (
-      <Container>
+      <div>
+        
         <Navi />
-        <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route exact path='/Du' element={<HomeDutch />} />
-          <Route exact path='/Tr' element={<HomeTurkish />} />
-          <Route exact path='/admin5874' element={<Login />} />
-          <Route exact path='/lp' element={<LessonPage />} />
-          <Route exact path='/ep' element={<ExercisePage />} />
-          <Route exact path='/finalscore' element={<ExercisePageFinal />} />
-        </Routes>
+        <Container>
+          <Routes>
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/Du' element={<HomeDutch />} />
+            <Route exact path='/Tr' element={<HomeTurkish />} />
+            <Route exact path='/admin5874' element={<Login />} />
+            <Route exact path='/lp' element={<LessonPage />} />
+            <Route exact path='/ep' element={<ExercisePage />} />
+            <Route exact path='/finalscore' element={<ExercisePageFinal />} />
+          </Routes>
+        </Container>
         <Footer/>
-      </Container>
+      </div>
+
 
 
 
