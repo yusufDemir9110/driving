@@ -9,6 +9,7 @@ import HomeTurkish from './pages/HomeTurkish';
 import LessonPage from './pages/LessonPage';
 import ExercisePage from './pages/ExercisePage';
 import ExercisePageFinal from './pages/ExercisePageFinal';
+import Footer from './components/Footer';
 
 class App extends Component {
   
@@ -25,6 +26,7 @@ class App extends Component {
           <Route exact path='/ep' element={<ExercisePage />} />
           <Route exact path='/finalscore' element={<ExercisePageFinal />} />
         </Routes>
+        <Footer/>
       </Container>
 
 

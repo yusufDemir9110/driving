@@ -9,6 +9,7 @@ function ExercisePageFinal() {
     const { state } = useLocation()
     const [results, setResults] = useState([])
     const [score,setScore]=useState(0)
+    const [analysis, setAnalysis]=useState(false)
 
     
     useEffect(() => {
@@ -35,46 +36,44 @@ function ExercisePageFinal() {
         }
         setScore(newScore)
     }
+    const showAnalysis = ()=>{
+        setAnalysis(true)
+    }
  
     return (
         <div>
-            
+            <button onClick={calculateScore}>Calculate Score</button>
+             {score}
+             <button onClick={showAnalysis}>Analysis</button>
+             {analysis===true? 
             <Row>
-            <Col xs='6'>
-            <h1>Your Answers</h1>
-            <ListGroup>
-            {
-                state.userAnswers.map((userAnswer,index) => (
-                   
-                        
-                            <ListGroupItem key={index}>
-                                {userAnswer}
-                                
-                                
-                                
-                            </ListGroupItem> 
-                            
-
-                                           
-                ))
-               
-            }
             
-             </ListGroup>
-            </Col>
-                <Col xs='6'>
+                <Col xs='12'>
                     <h1>Correct Answers</h1>
                 <ListGroup>
             {
-                results.map(({ id, data }) => {
+                results.map(({ id, data },index) => {
                     return(
                    
                         
                             <ListGroupItem key={id}>
-                                
-                                {data.rightOption}
-                                
-                                
+                                <div>{data.question}</div>
+                                <div>
+                                    <Row>
+                                    <Col xs='6'>
+                                    <div>
+                                        <div>Your Answer</div>
+                                        <div>{state.userAnswers[index]}</div>
+                                    </div>
+                                    </Col>
+                                    <Col xs='6'>
+                                    <div>
+                                        <div>Correct Answer</div>
+                                        <div>{data.rightOption}</div>
+                                    </div>
+                                    </Col>
+                                    </Row>                             
+                                </div>                               
                             </ListGroupItem> 
                             
 
@@ -88,10 +87,9 @@ function ExercisePageFinal() {
             
              
             </Row>
+:null}
             
             
-            <button onClick={calculateScore}>goster</button>
-             {score}
              
         </div>
     )
