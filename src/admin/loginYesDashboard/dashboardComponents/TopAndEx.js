@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { addDoc, collection} from 'firebase/firestore'
+import { addDoc, collection } from 'firebase/firestore'
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import db, { storage } from '../../../firebase/firebase'
 
@@ -8,7 +8,10 @@ function TopAndEx({ language }) {
     const [topic, setTopic] = useState({
         name: '',
         image: '',
-        description: ''
+        description1: '',
+        description2: '',
+        description3: '',
+        description4: ''
     })
     const [topOrEx, setTopOrEx] = useState('topic')
     const [progres, setProgres] = useState(0)
@@ -18,7 +21,7 @@ function TopAndEx({ language }) {
     function handleChange(e) {
         topic[e.target.id] = e.target.value
         setTopic({ ...topic, topic })
-        if (topic.name !== '' && imageUrl !== '' && topic.description !== '') {
+        if (topic.name !== '' && imageUrl !== '' && topic.description1 !== '') {
             setDisabled(false)
         } else {
             setDisabled(true)
@@ -60,13 +63,19 @@ function TopAndEx({ language }) {
                     await addDoc(collection(db, 'topics-data'), {
                         name: topic.name,
                         image: imageUrl,
-                        description: topic.description
+                        description1: topic.description1,
+                        description2: topic.description2,
+                        description3: topic.description3,
+                        description4: topic.description4
                     })
                 } else {
                     await addDoc(collection(db, 'exercises-data'), {
                         name: topic.name,
                         image: imageUrl,
-                        description: topic.description
+                        description1: topic.description1,
+                        description2: topic.description2,
+                        description3: topic.description3,
+                        description4: topic.description4
                     })
                 }
                 break
@@ -75,13 +84,19 @@ function TopAndEx({ language }) {
                     await addDoc(collection(db, 'topics-data-Dutch'), {
                         name: topic.name,
                         image: imageUrl,
-                        description: topic.description
+                        description1: topic.description1,
+                        description2: topic.description2,
+                        description3: topic.description3,
+                        description4: topic.description4
                     })
                 } else {
                     await addDoc(collection(db, 'exercises-data-Dutch'), {
                         name: topic.name,
                         image: imageUrl,
-                        description: topic.description
+                        description1: topic.description1,
+                        description2: topic.description2,
+                        description3: topic.description3,
+                        description4: topic.description4
                     })
                 }
                 break
@@ -90,13 +105,19 @@ function TopAndEx({ language }) {
                     await addDoc(collection(db, 'topics-data-Turkish'), {
                         name: topic.name,
                         image: imageUrl,
-                        description: topic.description
+                        description1: topic.description1,
+                        description2: topic.description2,
+                        description3: topic.description3,
+                        description4: topic.description4
                     })
                 } else {
                     await addDoc(collection(db, 'exercises-data-Turkish'), {
                         name: topic.name,
                         image: imageUrl,
-                        description: topic.description
+                        description1: topic.description1,
+                        description2: topic.description2,
+                        description3: topic.description3,
+                        description4: topic.description4
                     })
                 }
                 break
@@ -104,7 +125,10 @@ function TopAndEx({ language }) {
         setTopic({
             name: '',
             image: '',
-            description: ''
+            description1: '',
+            description2: '',
+            description3: '',
+            description4: ''
         })
         setImageUrl('')
         setDisabled(true)
@@ -131,7 +155,10 @@ function TopAndEx({ language }) {
                 </div>
                 <input required type='text' id='name' value={topic.name} onChange={handleChange}></input>
                 <input required disabled type='url' id='image' value={imageUrl} onChange={handleChange}></input>
-                <input required type='textarea' id='description' value={topic.description} onChange={handleChange}></input>
+                <input required type='textarea' id='description1' value={topic.description1} onChange={handleChange}></input>
+                <input required type='textarea' id='description2' value={topic.description2} onChange={handleChange}></input>
+                <input required type='textarea' id='description3' value={topic.description3} onChange={handleChange}></input>
+                <input required type='textarea' id='description4' value={topic.description4} onChange={handleChange}></input>
                 <button disabled={disabled} onClick={add}>ekle</button>
             </div>
         </div>

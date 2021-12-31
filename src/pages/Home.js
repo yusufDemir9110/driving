@@ -40,12 +40,15 @@ function Home() {
                         topics.map(({ id, data }) => (
                             <Col xs='12' sm='6' md='4' lg='3'>
                                 <Link to={'/lp'} state={{ state: data.name }}>
-
+                                    
                                     <div key={id} className='topic' style={{ backgroundImage: 'url(' + data.image + ')' }}>
                                         
                                         <div className='topic_name'>{data.name}</div>
                                         <div className='topic_desc_bg'>
-                                            <div className='topic_desc'>{data.description}</div>
+                                            <div className='topic_desc' id='topic_desc_1'>{data.description1}</div>
+                                            <div className='topic_desc' id='topic_desc_2'>{data.description2}</div>
+                                            <div className='topic_desc' id='topic_desc_3'>{data.description3}</div>
+                                            <div className='topic_desc' id='topic_desc_4'>{data.description4}</div>
                                         </div>
 
 
