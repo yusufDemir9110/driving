@@ -33,24 +33,27 @@ function LessonPage() {
     }, [])
 
     return (
-        <div>
-            <h1>HomeEnglish</h1>
-            <h2>{topicName.state.state}</h2>
-            <div>
+        <div className='slideBody'>      
+            
                 <div className='mainSlide'>
                     <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide} />
                     <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide} />
                     {
                         lessons.map(({ id, data },index) => (
                             <div className={index===current?'data active':'data'} key={id}>
-                                {index===current && <div className='slide' >{data.head} <img src={data.image}></img> {data.description}</div>}
+                                {index===current && 
+                                    <div className='slide'>
+                                        <div className='dataHead'>{data.head}</div>
+                                        <div className='dataImage'><img src={data.image}></img></div> 
+                                        <div className='dataDesc'>{data.description}</div>                    
+                                    </div>}
                                 
                             </div>
 
                         ))
                     }
                 </div>
-            </div>
+            
         </div>
     )
 }

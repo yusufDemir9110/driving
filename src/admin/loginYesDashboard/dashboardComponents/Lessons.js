@@ -35,7 +35,7 @@ function Lessons({ language }) {
     }
 
     const uploadImages = (image) => {
-        const storageRefLes = ref(storage, `/images/${image.name}`)
+        const storageRefLes = ref(storage, `/lesAndEx/${image.name}`)
         const uploadTask = uploadBytesResumable(storageRefLes, image)
         uploadTask.on('state_changed', (snapshot) => {
             const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
@@ -110,7 +110,7 @@ function Lessons({ language }) {
                 <input required type='text' id='topic' value={lesson.topic} onChange={handleChange}></input>
                 <input required type='text' id='head' value={lesson.head} onChange={handleChange}></input>
                 <input required disabled type='url' id='image' value={imageUrl} onChange={handleChange}></input>
-                <input required type='textarea' id='description' value={lesson.description} onChange={handleChange}></input>
+                <input required type='textarea' row='8' id='description' value={lesson.description} onChange={handleChange}></input>
                 <button disabled={disabled} onClick={add}>ekle</button>
             </div>
         </div>

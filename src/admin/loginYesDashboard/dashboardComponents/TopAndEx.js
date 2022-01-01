@@ -40,8 +40,8 @@ function TopAndEx({ language }) {
     }
 
     const uploadFiles = (file) => {
-        if (!file) return
-        const storageRef = ref(storage, `/files/${file.name}`)
+        
+        const storageRef = ref(storage, `/topAndEx/${file.name}`)
         const uploadTask = uploadBytesResumable(storageRef, file)
 
         uploadTask.on('state_changed', (snapshot) => {
@@ -136,7 +136,7 @@ function TopAndEx({ language }) {
     }
     return (
         <div>
-            <h1>language {language}</h1>
+            
             <div>
                 <select id="toporex" size="2" onChange={(e) => chooseTopOrEx(e)} value={topOrEx}>
                     <option id="topic" value="topic">Topic</option>

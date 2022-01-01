@@ -4,6 +4,8 @@ import db from '../firebase/firebase';
 import { Link } from 'react-router-dom'
 import '../styles/HomePage.css'
 import { Col, Row } from 'reactstrap'
+import Navi from '../components/Navi'
+import Footer from '../components/Footer';
 
 function Home() {
 
@@ -31,6 +33,7 @@ function Home() {
 
     return (
         <div>
+            <Navi />
             <h1>HomeEnglish</h1>
             <h1>Lessons</h1>
             <div className='topic_section'>
@@ -98,6 +101,7 @@ function Home() {
                 </Row>
 
             </div>
+            <Footer/>
         </div>
     )
 }

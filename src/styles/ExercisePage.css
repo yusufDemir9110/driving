@@ -2,8 +2,10 @@
     background-color: rgba(56,57,57,0.5);
 }
 
+
+
 .mainSlide{
-    
+    padding-top:30px;
     display: grid;
     place-content: center;
     height: 100vh;
@@ -18,11 +20,16 @@
 
 }
 .dataHead{
-    width: 100%;
     position: relative;
-    bottom:40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    margin-top: 30px;
+    width: 100%;
+    
+    bottom:10px;
     text-align: center;
-    font-size:1.5rem;
+    font-size:1.2rem;
     font-weight: 600;
 }
 .dataImage>img{
@@ -73,3 +80,26 @@
     transition-duration: 1s;
     transform: scale(1.08);
   }
+
+  .options{
+      border:1px solid red;
+      border-radius: 5px;
+      background-color: greenyellow;
+      margin:10px;
+      padding:5px;
+}
+
+.finishExam{
+    position: relative;
+    border-radius: 10px;
+    background-color: blue;
+    color:white;
+    border: 2px groove darkblue;
+    margin: 50px 0 50px 0;
+}
+
+.finishExamContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

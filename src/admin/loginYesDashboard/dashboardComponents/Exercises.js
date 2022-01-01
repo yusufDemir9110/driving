@@ -37,7 +37,7 @@ function Exercises({ language }) {
     }
 
     const uploadImages = (image) => {
-        const storageRefLes = ref(storage, `/images/${image.name}`)
+        const storageRefLes = ref(storage, `/lesAndEx/${image.name}`)
         const uploadTask = uploadBytesResumable(storageRefLes, image)
         uploadTask.on('state_changed', (snapshot) => {
             const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
