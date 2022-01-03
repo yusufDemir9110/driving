@@ -65,14 +65,16 @@ function ExercisePage() {
                             {
                                 index === current &&
                                 <div className='slide' >
-                                    <div className='dataHead'><div>{data.head}</div> <div>soru {index + 1}</div></div>
+                                    <div className='dataHead'>{data.head} </div>
                                     <div className='dataImage'><img src={data.image}></img></div>
-                                    <div className='dataQue'>{data.question}</div>
-                                    <div>
+                                    <div className='dataQue'><span className='queIndex'>soru {index + 1}</span><div className='queText'>&nbsp;&nbsp;&nbsp;{data.question}</div></div>
+                                    <div >
                                         {
                                             userAnswers[index]?
-                                            <div><div className='options'>{userAnswers[index]}</div>
-                                            <button onClick={(e) => changeAnswer(e,index)}>Change Answer</button>
+                                            <div className='selectedContainer'>
+                                                <div className='selected'>{userAnswers[index]}</div>
+                                                <div className='changeAnswerContainer'><button className='changeAnswer' onClick={(e) => changeAnswer(e,index)}>Change Answer</button></div>
+                                                
                                             </div>
                                                 :
                                             (data.rightOption + ',' + data.wrongOptions).split(',').sort(()=>0.5-Math.random()).map((option) =>
