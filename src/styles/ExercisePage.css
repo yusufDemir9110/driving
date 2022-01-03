@@ -70,23 +70,28 @@
     position: relative;
     left: 5%;
     
-  }
+}
   
-  .data.active {
+.data.active {
     width: 90%;
     position: relative;
     left: 5%;
     opacity: 1;
     transition-duration: 1s;
     transform: scale(1.08);
-  }
+}
 
-  .options{
-      border:1px solid red;
-      border-radius: 5px;
-      background-color: greenyellow;
-      margin:10px;
-      padding:5px;
+.options{
+    border:2px groove darkgreen;
+    border-radius: 5px;
+    background-color: violet;
+    margin:10px;
+    padding:5px;
+    cursor: pointer;
+    font-weight: 600;  
+}
+.selected{
+    background-color: red;
 }
 
 .finishExam{

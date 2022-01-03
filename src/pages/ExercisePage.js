@@ -1,17 +1,17 @@
 import { collection, onSnapshot } from 'firebase/firestore';
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback, useMemo } from 'react'
 import { useLocation } from 'react-router-dom';
 import db from '../firebase/firebase';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa'
 import '../styles/ExercisePage.css'
 import { useNavigate } from 'react-router-dom'
-import { ListGroup, ListGroupItem } from 'reactstrap';
+import $ from 'jquery'
 
 function ExercisePage() {
     const [exercises, setExercises] = useState([])
     const [current, setCurrent] = useState(0)
     const [userAnswers, setUserAnswers] = useState([])
-
+    
     const length = exercises.length
     let topicName = useLocation()
     let newTopicName = topicName.state.state
@@ -35,34 +35,27 @@ function ExercisePage() {
                     data: doc.data()
                 }))
             )
-
         )
-
-
     }, [])
-
-    const handleClickAnswer = (e, index) => {
-
+    const handleClickAnswer = (e, index) => {        
         userAnswers[index] = e.target.textContent
         setUserAnswers([...userAnswers])
+        
     }
-
-
-
-
+    const changeAnswer = (e,index)=>{
+        userAnswers[index]=''
+        setUserAnswers([...userAnswers])
+    }
     const finishExam = () => {
 
         let answer = window.confirm('are you sure?')
         if (answer) {
             navigate('/finalscore', { state: { userAnswers, newTopicName } })
-
         }
-
     }
-
     return (
         <div className='slideBody'>
-            
+
             <div className='mainSlide'>
                 <FaArrowAltCircleLeft className='left-arrow' onClick={(e) => prevSlide(e)} />
                 <FaArrowAltCircleRight className='right-arrow' onClick={(e) => nextSlide(e)} />
@@ -76,13 +69,26 @@ function ExercisePage() {
                                     <div className='dataImage'><img src={data.image}></img></div>
                                     <div className='dataQue'>{data.question}</div>
                                     <div>
-                                        {(data.rightOption + ',' + data.wrongOptions).split(',').sort(() => 0.5 - Math.random()).map((option) =>
-                                        (
-                                            <div className='options'
-
-                                                onClick={(e) => handleClickAnswer(e, index)} key={id}>{option}</div>
-                                        ))
+                                        {
+                                            userAnswers[index]?
+                                            <div><div className='options'>{userAnswers[index]}</div>
+                                            <button onClick={(e) => changeAnswer(e,index)}>Change Answer</button>
+                                            </div>
+                                                :
+                                            (data.rightOption + ',' + data.wrongOptions).split(',').sort(()=>0.5-Math.random()).map((option) =>
+                                                (
+                                                    <div
+                                                        key={id}
+                                                        className='options'
+                                                        id={option}
+                                                        onClick={(e) => handleClickAnswer(e, index)}
+                                                    >
+                                                        {option}                                                       
+                                                    </div>
+                                                    
+                                                ))                                                                                      
                                         }
+                                        
                                     </div>
                                 </div>}
                         </div>
