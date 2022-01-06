@@ -6,12 +6,16 @@ import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa'
 import '../styles/ExercisePage.css'
 import { useNavigate } from 'react-router-dom'
 import $ from 'jquery'
+import {Modal,Button} from 'react-bootstrap'
 
 function ExercisePage() {
     const [exercises, setExercises] = useState([])
     const [current, setCurrent] = useState(0)
     const [userAnswers, setUserAnswers] = useState([])
-    
+    const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
     const length = exercises.length
     let topicName = useLocation()
     let newTopicName = topicName.state.state
@@ -48,15 +52,31 @@ function ExercisePage() {
     }
     const finishExam = () => {
 
-        let answer = window.confirm('are you sure?')
-        if (answer) {
+        setShow(true)
+        
+    }
+    const goFinalPage=()=>{
+        
             navigate('/finalscore', { state: { userAnswers, newTopicName } })
-        }
+    
     }
     return (
-        <div className='slideBody'>
-
-            <div className='mainSlide'>
+        <div className='slideBodyExercise'>
+<Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Cancel
+          </Button>
+          <Button variant="primary" onClick={goFinalPage}>
+            Finish Exam
+          </Button>
+        </Modal.Footer>
+      </Modal>
+            <div className='mainSlideExercise'>
                 <FaArrowAltCircleLeft className='left-arrow' onClick={(e) => prevSlide(e)} />
                 <FaArrowAltCircleRight className='right-arrow' onClick={(e) => nextSlide(e)} />
                 {
@@ -64,8 +84,8 @@ function ExercisePage() {
                         <div className={index === current ? 'data active' : 'data'} key={id}>
                             {
                                 index === current &&
-                                <div className='slide' >
-                                    <div className='dataHead'>{data.head} </div>
+                                <div className='slideExercise' >
+                                    <div className='dataHeadExercise'>{data.head} </div>
                                     <div className='dataImage'><img src={data.image}></img></div>
                                     <div className='dataQue'><span className='queIndex'>soru {index + 1}</span><div className='queText'>&nbsp;&nbsp;&nbsp;{data.question}</div></div>
                                     <div >
@@ -100,7 +120,9 @@ function ExercisePage() {
             <div className='finishExamContainer'>
                 <button className='finishExam' onClick={finishExam}>Finish Exam</button>
             </div>
+            
 
+      
         </div>
     )
 }

@@ -6,13 +6,15 @@ import { Col, ListGroup, ListGroupItem, Row } from 'reactstrap';
 import Navi from '../components/Navi'
 import '../styles/ExercisePageFinal.css'
 import $ from 'jquery'
+import { FaTruckMonster } from 'react-icons/fa';
 
 function ExercisePageFinal() {
     const { state } = useLocation()
     const [results, setResults] = useState([])
     const [score, setScore] = useState(0)
+    const [showScore,setShowScore]=useState(false)
     const [analysis, setAnalysis] = useState(false)
-    const [situation,setSituation] = useState(false)
+    
 
     useEffect(() => {
         onSnapshot(collection(db, 'exercises-data-' + state.newTopicName), snapshot =>
@@ -37,6 +39,7 @@ function ExercisePageFinal() {
             }
         }
         setScore(newScore)
+        setShowScore(true)
     }
     const showAnalysis = () => {
         setAnalysis(true)
@@ -49,7 +52,10 @@ function ExercisePageFinal() {
             <main className='main'>
                 <div className='scoreContainer'>
                     <button className='calculate' onClick={calculateScore}>Calculate Score</button>
-                    <div className='score'>{score}</div>
+                    {
+                        showScore?<div className='score'>{score} / {results.length}</div>:null
+                    }
+                    
                 </div>
                
                 <div className='scoreContainer'>

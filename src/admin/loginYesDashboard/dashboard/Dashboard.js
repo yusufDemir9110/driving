@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Lessons from '../dashboardComponents/Lessons'
 import TopAndEx from '../dashboardComponents/TopAndEx'
 import Exercises from '../dashboardComponents/Exercises'
+import Carslider from '../dashboardComponents/Carslider'
 
 
 function Dashboard() {
@@ -30,7 +31,7 @@ function Dashboard() {
             <TopAndEx language={language}/>
             <Lessons language={language}/>
             <Exercises language={language}/>
-
+            <Carslider language={language}/>
         </div>
     )
 }

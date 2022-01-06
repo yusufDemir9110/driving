@@ -43,8 +43,8 @@ function LessonPage() {
                             <div className={index===current?'data active':'data'} key={id}>
                                 {index===current && 
                                     <div className='slide'>
-                                        <div className='dataHead'>{data.head}</div>
-                                        <div className='dataImage'><img src={data.image}></img></div> 
+                                        <div className='dataHeadLesson'>{data.head}</div>
+                                        <div className='dataImageLesson'><img src={data.image}></img></div> 
                                         <div className='dataDesc'>{data.description}</div>                    
                                     </div>}
                                 
