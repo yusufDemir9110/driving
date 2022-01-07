@@ -3,7 +3,7 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 import Dashboard from '../loginYesDashboard/dashboard/Dashboard';
-
+import '../../styles/Admin.css'
 
 
 export default class LoginYes extends Component {
@@ -20,8 +20,12 @@ export default class LoginYes extends Component {
     render() {
         return (
             <div>
-                <h1>giris yappildi</h1>
-                <button onClick={() => this.cikis()}>cik</button>
+                <div  className='mainScreen'>
+                <div><h1>Admin Page</h1></div>
+                <div><button onClick={() => this.cikis()}>Log Out</button></div>
+                </div>
+                
+                
                 <div>
                    <Dashboard/> 
                    

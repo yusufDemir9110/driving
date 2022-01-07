@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { addDoc, collection } from 'firebase/firestore'
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import db, { storage } from '../../../firebase/firebase'
+import '../../../styles/Admin.css'
+
 
 function Exercises({ language }) {
 
@@ -54,7 +56,7 @@ function Exercises({ language }) {
     const add = async (event) => {
         event.preventDefault()
         const newExercise = exercise.topic
-      
+
         switch (language) {
             case 'English':
 
@@ -105,27 +107,52 @@ function Exercises({ language }) {
     }
 
     return (
-        <div>
-            <h1>exercises</h1>
-            <h2>{language}</h2>
+        <div className='bigContainer'>
+            <h1>Exercises</h1>
+            <h2>Language: {language}</h2>
 
 
             <div>
-                <div>
+                <div className='topicImageLoader'>
                     <form onSubmit={imageHandler}>
                         <input type='file'></input>
                         <button type='submit'>Upload</button>
                     </form>
                     <h2>Uploaded {progres} %</h2>
                 </div>
-                <input required type='text' id='topic' value={exercise.topic} onChange={handleChange}></input>
-                <input required type='text' id='head' value={exercise.head} onChange={handleChange}></input>
-                <input required disabled type='url' id='image' value={imageUrl} onChange={handleChange}></input>
-                <input required type='textarea' id='question' value={exercise.question} onChange={handleChange}></input>
-                <input required type='text' id='rightOption' value={exercise.rightOption} onChange={handleChange}></input>
-                <input required type='text' id='wrongOptions' value={exercise.wrongOptions} onChange={handleChange}></input>
-                
-                <button disabled={disabled} onClick={add}>ekle</button>
+                <div className='topAndExLabels'>
+                    <div>
+                        <label for='topic'>Question Topic
+                            <input required type='text' id='topic' value={exercise.topic} onChange={handleChange} placeholder='Write Exactly'></input>
+                        </label>
+                        <label for='topic'>Question Head
+                            <input required type='text' id='head' value={exercise.head} onChange={handleChange} placeholder='Head'></input>
+                        </label>
+
+
+                        <label for='image'>Question Image
+                            <input required disabled type='url' id='image' value={imageUrl} onChange={handleChange} placeholder='imageUrl'></input>
+                        </label>
+                    </div>
+                    <div>
+                        <div>
+                            <div className='textAreaArea'>Question</div>
+                            <textarea className='textAreaArea' required id='question' rows="3" value={exercise.question} onChange={handleChange} placeholder='Question'></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <div className='textAreaArea'>Right Option</div>
+                        <textarea required className='textAreaArea' type='text' id='rightOption' value={exercise.rightOption} onChange={handleChange} placeholder='ro'></textarea>
+
+                        <div className='textAreaArea'>Wrong Options</div>
+                        <textarea required className='textAreaArea' type='text' id='wrongOptions' value={exercise.wrongOptions} onChange={handleChange} placeholder='wo1,wo2,wo3'></textarea>
+
+                    </div>
+
+                </div>
+                <div className='topAddButtonCont'>
+                    <button disabled={disabled} onClick={add}>ekle</button>
+                </div>
             </div>
         </div>
     )

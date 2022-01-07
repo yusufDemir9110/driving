@@ -3,16 +3,17 @@
     position: fixed;
     height: 55px;
     width: 100%;
-    background: linear-gradient(#20a064, #007a31);
+    background: linear-gradient(#585858, #ffffff);
     font-family: "Quicksand", sans-serif;
     font-size: 1.1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     z-index: 3;
+    border-bottom: 2px solid black;
 }
 #line:hover{
-    background: #007a31;
+    background: #ffffff;
    
 }
 
@@ -21,7 +22,7 @@
 }
 
 .menuItemList {
-    color: white;
+    color: black;
     font-weight: 600;
     margin-top: 13px;
     margin-right: 40px;
@@ -35,7 +36,8 @@ ul {
 
 li {
 
-    color: white;
+    color: rgba(0,0,0,0.6);
+    
     display: block;
     float: left;
     padding: 5px 5px 5px 15px;
@@ -77,13 +79,17 @@ li:hover {
 .li3:hover,
 .li4:hover {
    
-    color:yellow;
+    color:black;
+    text-decoration: underline;    
+    
 }
+
+
 
 
 .li1:hover{
     display: block;
-    background:#007a31;
+    background:#ffffff;
     border-radius: 10px;
     padding-bottom: 0;
    

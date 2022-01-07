@@ -91,7 +91,7 @@ function Carslider({ language }) {
     }
 
     return (
-        <div>
+        <div className='bigContainer'>
             <h1>Carslider</h1>
             <h2>{language}</h2>
 

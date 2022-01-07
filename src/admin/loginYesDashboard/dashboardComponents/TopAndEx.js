@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { addDoc, collection } from 'firebase/firestore'
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import db, { storage } from '../../../firebase/firebase'
+import '../../../styles/Admin.css'
 
 function TopAndEx({ language }) {
 
@@ -40,7 +41,7 @@ function TopAndEx({ language }) {
     }
 
     const uploadFiles = (file) => {
-        
+
         const storageRef = ref(storage, `/topAndEx/${file.name}`)
         const uploadTask = uploadBytesResumable(storageRef, file)
 
@@ -135,32 +136,64 @@ function TopAndEx({ language }) {
         setProgres(0)
     }
     return (
-        <div>
-            
-            <div>
+        <div className='bigContainer'>
+
+            <div className='selectTopOrEx'>
                 <select id="toporex" size="2" onChange={(e) => chooseTopOrEx(e)} value={topOrEx}>
                     <option id="topic" value="topic">Topic</option>
                     <option id="exercise" value="exercise">Exercise</option>
 
                 </select>
+                <h3>topic or exercise:<strong>{topOrEx}</strong></h3>
             </div>
-            <h3>topic or exercise {topOrEx}</h3 >
-            <div>
-                <div>
+            
+            
+            
+                <div className='topicImageLoader'>
                     <form onSubmit={imageHandler}>
                         <input type='file'></input>
                         <button type='submit'>Upload</button>
                     </form>
                     <h2>Uploaded {progres} %</h2>
                 </div>
-                <input required type='text' id='name' value={topic.name} onChange={handleChange}></input>
-                <input required disabled type='url' id='image' value={imageUrl} onChange={handleChange}></input>
-                <input required type='textarea' id='description1' value={topic.description1} onChange={handleChange}></input>
-                <input required type='textarea' id='description2' value={topic.description2} onChange={handleChange}></input>
-                <input required type='textarea' id='description3' value={topic.description3} onChange={handleChange}></input>
-                <input required type='textarea' id='description4' value={topic.description4} onChange={handleChange}></input>
-                <button disabled={disabled} onClick={add}>ekle</button>
-            </div>
+                <div className='topAndEx'>
+                        <div>
+                        <label for='name'>Topic Names
+                            <input required type='text' id='name' value={topic.name} onChange={handleChange} placeholder='Topic Name'></input>
+                        </label>
+                        <label for='image'>Topic Image
+                            <input required disabled type='url' id='image' value={imageUrl} onChange={handleChange} placeholder='imageUrl'></input>
+                        </label>
+                        </div>
+                        <div>
+                        <label for='description1'>Description1
+                            <input required type='textarea' id='description1' value={topic.description1} onChange={handleChange} placeholder='desc1'></input>
+                        </label>
+                        <label for='description2'>Description2
+                            <input required type='textarea' id='description2' value={topic.description2} onChange={handleChange} placeholder='desc2'></input>
+                        </label>
+                        </div>
+                        <div>
+                        <label for='description3'>Description3
+                            <input required type='textarea' id='description3' value={topic.description3} onChange={handleChange} placeholder='desc3'></input>
+                        </label>
+                        <label for='description4'>Description4
+                            <input required type='textarea' id='description4' value={topic.description4} onChange={handleChange} placeholder='desc4'></input>
+                        </label>
+                        </div>
+                        
+                        
+                        
+                    
+                    <div className='topAddButtonCont'>
+                    <button disabled={disabled} onClick={add}>ekle</button>
+                    </div>
+                    
+
+                    
+                </div>
+
+            
         </div>
     )
 }
