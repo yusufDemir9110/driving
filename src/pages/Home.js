@@ -44,7 +44,7 @@ function Home() {
     return (
         <div>
             <Navi />
-            <Carousel duration={1000} interval={5000}>
+            <Carousel duration={1000} interval={5000} indicators={false} stopAutoPlayOnHover={false}>
                 {
                     slides.map(({ data, id }) => (
                         <Paper key={id} className='paper' style={{ backgroundImage: 'url(' + data.image + ')' }}>
@@ -60,7 +60,6 @@ function Home() {
             <h1>Lessons</h1>
             <div className='topic_section'>
                 <div className='topicCont'>
-
                     {
                         topics.map(({ id, data }) => (
                             <Col style={{padding:0}} xs='12' sm='4' md='3' lg='2'>
@@ -92,7 +91,7 @@ function Home() {
             </div>
             <h1>Exercises</h1>
             <div className='topic_section'>
-                <div>
+                <div className='topicCont'>
 
                     {
                         exercises.map(({ id, data }) => (

@@ -64,9 +64,8 @@ function ExercisePage() {
         <div className='slideBodyExercise'>
 <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Are you sure?</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Are you sure?</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Cancel
