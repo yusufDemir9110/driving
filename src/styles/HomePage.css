@@ -1,115 +1,113 @@
-.paper{
-    position: relative;
-    height:400px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items:center;
+.paper {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.topic{
-    height: 200px;
-    width: 100%;
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: 100%;   
-    border-radius: 25px !important;
-    transition-duration: 1s;
-    padding:0 !important;
-    overflow: hidden;
-    
+.topic {
+  height: 200px;
+  width: 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 25px !important;
+  transition-duration: 1s;
+  padding: 0 !important;
+  overflow: hidden;
 }
-.topicCont{
-    display: flex;
-    justify-content: space-around;
+.topicCont {
+  display: flex;
+  justify-content: space-around;
 }
-.topic:hover{
-    background-position: center;
-    background-size:130%;
-    transition-duration: 1s ease;
-}
-
-
-.topic_name{
-    position: relative;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 35px;
-    text-align: center;
-    border-radius: 1em 1em 0 0;
-    color:black;
-    font-size: 1.5rem;
-    font-weight: 600;
-    background-color: rgb(119, 119, 57);
-    
-}
-.topic_desc_bg{
-    background-color: rgb(119, 119, 57);
-    width: 100%;
-    height: 0;
-    border-radius: 0;
-    transition-duration: 1s;
-    display: flex;
-    flex-direction: column;
-    
-    align-items: center;
+.topic:hover {
+  background-position: center;
+  background-size: 130%;
+  transition-duration: 1s ease;
 }
 
-
-.topic_desc{
-    color:black;
-    opacity:0;
-    margin: 0;
-    
+.topic_name {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  border-bottom: 2px solid black;
+  border-radius: 1em 1em 0 0;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: linear-gradient(262.85deg, #001aff 0.9%, #3dadfe 98.81%);
+}
+.topic_desc_bg {
+  background: linear-gradient(262.85deg, #001aff 0.9%, #3dadfe 98.81%);
+  width: 100%;
+  height: 0;
+  border-radius: 0;
+  transition-duration: 1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#topic_desc_1{
-    transition-duration: 0.2s;
-    transition-delay: 0.75s;
-}
-#topic_desc_2{
-    transition-duration: 0.4s;
-    transition-delay: 0.5s;
-}
-#topic_desc_3{
-    transition-duration: 0.6s;
-    transition-delay: 0.25s;
-}
-#topic_desc_4{
-    transition-duration: 0.8s;
-    transition-delay: 0s;
+.topic_desc {
+  color: black;
+  opacity: 0;
+  margin: 0;
 }
 
-.topic:hover #topic_desc_1{
-    transition-duration: linear;
-    transition-delay: 0s;
-    opacity: 1;
-    transform: scale(1.08);
+#topic_desc_1 {
+  transition-duration: 0.2s;
+  transition-delay: 0.75s;
 }
-.topic:hover #topic_desc_2{
-    transition-duration: linear;
-    transition-delay: 0.25s;
-    opacity: 1;
-    transform: scale(1.08);
+#topic_desc_2 {
+  transition-duration: 0.4s;
+  transition-delay: 0.5s;
 }
-.topic:hover #topic_desc_3{
-    transition-duration: linear;
-    transition-delay: 0.5s;
-    opacity: 1;
-    transform: scale(1.08);
+#topic_desc_3 {
+  transition-duration: 0.6s;
+  transition-delay: 0.25s;
 }
-.topic:hover #topic_desc_4{
-    transition-duration: linear;
-    transition-delay: 0.75s;
-    opacity: 1;
-    transform: scale(1.08);
+#topic_desc_4 {
+  transition-duration: 0.8s;
+  transition-delay: 0s;
 }
 
-.topic:hover>.topic_desc_bg{
-    transition-duration: 1s ease;
-    height: 165px;
-    border-radius: 0 0 1em 1em;
+.topic:hover #topic_desc_1 {
+  transition-duration: linear;
+  transition-delay: 0s;
+  opacity: 1;
+  transform: scale(1.08);
+}
+.topic:hover #topic_desc_2 {
+  transition-duration: linear;
+  transition-delay: 0.25s;
+  opacity: 1;
+  transform: scale(1.08);
+}
+.topic:hover #topic_desc_3 {
+  transition-duration: linear;
+  transition-delay: 0.5s;
+  opacity: 1;
+  transform: scale(1.08);
+}
+.topic:hover #topic_desc_4 {
+  transition-duration: linear;
+  transition-delay: 0.75s;
+  opacity: 1;
+  transform: scale(1.08);
 }
 
+.topic:hover > .topic_desc_bg {
+  transition-duration: 1s ease;
+  height: 165px;
+  border-radius: 0 0 1em 1em;
+}
+
+.exercises_bg {
+  background: linear-gradient(180deg, #a000ba 0%, #fa00ff 100%);
+}
