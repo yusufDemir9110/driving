@@ -107,10 +107,10 @@ nav li {
   background-color: black;
   border-radius: 10px;
 }
-ul.subUl li {
+nav ul.subUl li {
   clear: both;
   width: 100%;
 }
-li:hover {
+nav li:hover {
   color: #ffa279;
 }

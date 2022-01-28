@@ -44,8 +44,8 @@ function Home() {
     <div>
       <Navi />
       <Carousel
-        duration={1000}
-        interval={5000}
+        duration={5000}
+        interval={10000}
         indicators={false}
         stopAutoPlayOnHover={false}
       >
@@ -60,75 +60,110 @@ function Home() {
           </Paper>
         ))}
       </Carousel>
-      <h1>HomeEnglish</h1>
-      <h1>Lessons</h1>
-      <div className="topic_section">
+      <main>
+        <h3>
+          Prepare for the Netherlands driving test with our free lessons and
+          practice exams
+        </h3>
+        <p>
+          In Netherlands, driver's license theory exam consists of 3 parts. If
+          you can't get enough correct answers in any part, the exam ends
+          automatically.
+        </p>
+        <ul>
+          <li>
+            In the first part of 25 questions, they want you to decide what to
+            do by looking at a traffic scenario (photo) that appears on the
+            screen. The choices are always the same:
+            <ol>
+              <li>Do nothing</li>
+              <li>take your foot off the gas</li>
+              <li>do nothing</li>
+            </ol>
+          </li>
+          <li>
+            There are 12 questions in the second part. You must get at least 10
+            correct.
+          </li>
+          <li>
+            There are 28 questions in the second part. You must get at least 25
+            correct.
+          </li>
+        </ul>
+        <p>
+          Funny Driving License will be an excellent assistant for you about the
+          theory exam. We still strongly recommend you to apply for professional
+          courses.
+        </p>
+      </main>
+
+      <section>
+        <h1 id="lessonH1">Lessons</h1>
         <div className="topicCont">
           {topics.map(({ id, data }) => (
-            <Col style={{ padding: 0 }} xs="12" sm="4" md="3" lg="2">
-              <Link
-                to={"/lp"}
-                style={{ padding: 0 }}
-                state={{ state: data.name }}
-              >
-                <div
-                  key={id}
-                  className="topic"
-                  style={{ backgroundImage: "url(" + data.image + ")" }}
-                >
-                  <div className="topic_name">{data.name}</div>
-                  <div className="topic_desc_bg">
-                    <div className="topic_desc" id="topic_desc_1">
-                      {data.description1}
-                    </div>
-                    <div className="topic_desc" id="topic_desc_2">
-                      {data.description2}
-                    </div>
-                    <div className="topic_desc" id="topic_desc_3">
-                      {data.description3}
-                    </div>
-                    <div className="topic_desc" id="topic_desc_4">
-                      {data.description4}
-                    </div>
-                  </div>
+            <div
+              key={id}
+              className="topic"
+              style={{ backgroundImage: "url(" + data.image + ")" }}
+            >
+              <div className="topic_name">{data.name}</div>
+              <div className="topic_desc_bg">
+                <div className="topic_desc" id="topic_desc_1">
+                  {data.description1}
                 </div>
-              </Link>
-            </Col>
+                <div className="topic_desc" id="topic_desc_2">
+                  {data.description2}
+                </div>
+                <div className="topic_desc" id="topic_desc_3">
+                  {data.description3}
+                </div>
+                <div className="topic_desc" id="topic_desc_4">
+                  {data.description4}
+                </div>
+                <div className="topic_desc" id="topic_desc_5">
+                  <Link to={"/lp"} state={{ state: data.name }}>
+                    <button className="buttonTop">Start</button>
+                  </Link>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
-      </div>
-      <h1>Exercises</h1>
-      <div className="topic_section">
+      </section>
+
+      <section>
+        <h1 id="exerciseH1">Exercises</h1>
         <div className="topicCont">
           {exercises.map(({ id, data }) => (
-            <Col style={{ padding: 0 }} xs="12" sm="4" md="3" lg="2">
-              <Link to={"/ep"} state={{ state: data.name }}>
-                <div
-                  key={id}
-                  className="topic"
-                  style={{ backgroundImage: "url(" + data.image + ")" }}
-                >
-                  <div className="topic_name exercises_bg">{data.name}</div>
-                  <div className="topic_desc_bg exercises_bg">
-                    <div className="topic_desc" id="topic_desc_1">
-                      {data.description1}
-                    </div>
-                    <div className="topic_desc" id="topic_desc_2">
-                      {data.description2}
-                    </div>
-                    <div className="topic_desc" id="topic_desc_3">
-                      {data.description3}
-                    </div>
-                    <div className="topic_desc" id="topic_desc_4">
-                      {data.description4}
-                    </div>
-                  </div>
+            <div
+              key={id}
+              className="topic"
+              style={{ backgroundImage: "url(" + data.image + ")" }}
+            >
+              <div className="topic_name exercises_bg">{data.name}</div>
+              <div className="topic_desc_bg exercises_bg">
+                <div className="topic_desc" id="topic_desc_1">
+                  {data.description1}
                 </div>
-              </Link>
-            </Col>
+                <div className="topic_desc" id="topic_desc_2">
+                  {data.description2}
+                </div>
+                <div className="topic_desc" id="topic_desc_3">
+                  {data.description3}
+                </div>
+                <div className="topic_desc" id="topic_desc_4">
+                  {data.description4}
+                </div>
+                <div className="topic_desc" id="topic_desc_5">
+                  <Link to={"/ep"} state={{ state: data.name }}>
+                    <button className="buttonEx">Start</button>
+                  </Link>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
-      </div>
+      </section>
       <Footer />
     </div>
   );

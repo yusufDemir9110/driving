@@ -1,17 +1,33 @@
 .paper {
   position: relative;
-  height: 400px;
+  height: 600px;
   width: 100%;
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
 }
+@media screen and (max-width: 1200px) {
+  .paper {
+    height: 450px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .paper {
+    height: 300px;
+  }
+}
+.paper h2,
+h4 {
+  color: white;
+}
 
 .topic {
   height: 200px;
   width: 100%;
-  background-position: top center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
   border-radius: 25px !important;
@@ -20,8 +36,11 @@
   overflow: hidden;
 }
 .topicCont {
-  display: flex;
-  justify-content: space-around;
+  margin: 25px 0;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 5%;
 }
 .topic:hover {
   background-position: center;
@@ -62,18 +81,22 @@
 
 #topic_desc_1 {
   transition-duration: 0.2s;
-  transition-delay: 0.75s;
+  transition-delay: 1s;
 }
 #topic_desc_2 {
   transition-duration: 0.4s;
-  transition-delay: 0.5s;
+  transition-delay: 0.75s;
 }
 #topic_desc_3 {
   transition-duration: 0.6s;
-  transition-delay: 0.25s;
+  transition-delay: 0.5s;
 }
 #topic_desc_4 {
   transition-duration: 0.8s;
+  transition-delay: 0.25ss;
+}
+#topic_desc_5 {
+  transition-duration: 1s;
   transition-delay: 0s;
 }
 
@@ -101,6 +124,12 @@
   opacity: 1;
   transform: scale(1.08);
 }
+.topic:hover #topic_desc_5 {
+  transition-duration: linear;
+  transition-delay: 1s;
+  opacity: 1;
+  transform: scale(1.08);
+}
 
 .topic:hover > .topic_desc_bg {
   transition-duration: 1s ease;
@@ -109,5 +138,52 @@
 }
 
 .exercises_bg {
+  background: linear-gradient(180deg, #a000ba 0%, #fa00ff 100%);
+}
+
+button {
+  position: relative;
+  top: 20px;
+  padding: 3px 15px;
+  background-color: black;
+  border-radius: 0.75em !important;
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.buttonTop {
+  color: #73c5ff;
+  border: 2px groove #001aff;
+}
+.buttonEx {
+  color: #fc61ff;
+  border: 2px groove #a000ba;
+}
+button:active {
+  border: 0px;
+}
+main {
+  margin: 50px;
+  text-indent: 15px;
+}
+main ul li {
+  list-style: none;
+}
+main ol li {
+  list-style: lower-latin;
+}
+section {
+  margin: 50px;
+  border: 2px solid black;
+  border-top: 5px solid black;
+  border-radius: 5px;
+}
+h1 {
+  text-align: center;
+}
+#lessonH1 {
+  background: linear-gradient(262.85deg, #001aff 0.9%, #3dadfe 98.81%);
+}
+#exerciseH1 {
   background: linear-gradient(180deg, #a000ba 0%, #fa00ff 100%);
 }
