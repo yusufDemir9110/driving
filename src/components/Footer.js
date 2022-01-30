@@ -27,6 +27,7 @@ class Footer extends Component {
         <div>
           <h4>Desgined By</h4>
           <div className="footerDesigner">
+            <p>Tunahan Dizdaroglu</p>
             <p>Yusuf Demir</p>
             <p>Fatih Sancaktar</p>
           </div>

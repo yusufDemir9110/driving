@@ -8,6 +8,7 @@ import Navi from "../components/Navi";
 import Footer from "../components/Footer";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Button } from "@mui/material";
+import cone from "../assets/cone.png";
 
 function Home() {
   const [slides, setSlides] = useState([]);
@@ -66,31 +67,37 @@ function Home() {
           practice exams
         </h3>
         <p>
+          <img src={cone} />
           In Netherlands, driver's license theory exam consists of 3 parts. If
           you can't get enough correct answers in any part, the exam ends
           automatically.
         </p>
         <ul>
           <li>
+            <img src={cone} />
             In the first part of 25 questions, they want you to decide what to
             do by looking at a traffic scenario (photo) that appears on the
-            screen. The choices are always the same:
+            screen. You must get at least 13 correct. The choices are always the
+            same:
             <ol>
-              <li>Do nothing</li>
-              <li>take your foot off the gas</li>
-              <li>do nothing</li>
+              <li>Brake</li>
+              <li>Release the accelerator</li>
+              <li>Nothing</li>
             </ol>
           </li>
           <li>
+            <img src={cone} />
             There are 12 questions in the second part. You must get at least 10
             correct.
           </li>
           <li>
+            <img src={cone} />
             There are 28 questions in the second part. You must get at least 25
             correct.
           </li>
         </ul>
         <p>
+          <img src={cone} />
           Funny Driving License will be an excellent assistant for you about the
           theory exam. We still strongly recommend you to apply for professional
           courses.
