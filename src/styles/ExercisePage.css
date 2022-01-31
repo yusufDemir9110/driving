@@ -16,21 +16,7 @@
   height: 90vh;
   width: 100%;
 }
-.dataHeadExercise {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: top;
-  margin-top: 90px;
-  width: 100%;
-  bottom: 10px;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 600;
-  background-color: lightblue;
-  border: 2px groove rgb(0, 10, 100);
-  border-radius: 5px;
-}
+
 .dataImage > img {
   border-radius: 10px;
 }

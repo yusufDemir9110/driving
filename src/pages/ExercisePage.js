@@ -82,7 +82,6 @@ function ExercisePage() {
           <div className={index === current ? "data active" : "data"} key={id}>
             {index === current && (
               <div className="slideExercise">
-                <div className="dataHeadExercise">{data.head} </div>
                 <div className="dataImage">
                   <img src={data.image}></img>
                 </div>
