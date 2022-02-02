@@ -115,7 +115,7 @@ function Lessons({ language }) {
         <div className="topAndExLabels">
           <div>
             <label for="id">
-              Lesson Id
+              Lesson Id &nbsp;&nbsp;&nbsp;&nbsp;
               <input
                 required
                 type="text"

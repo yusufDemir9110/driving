@@ -115,55 +115,27 @@ function Home() {
             >
               <div className="topic_name">{data.name}</div>
               <div className="topic_desc_bg">
-                <div className="topic_desc" id="topic_desc_1">
-                  {data.description1}
+                <div>
+                  <div className="topic_desc" id="topic_desc_1">
+                    &gt; {data.description1}
+                  </div>
+                  <div className="topic_desc" id="topic_desc_2">
+                    &gt; {data.description2}
+                  </div>
+                  <div className="topic_desc" id="topic_desc_3">
+                    &gt; {data.description3}
+                  </div>
+                  <div className="topic_desc" id="topic_desc_4">
+                    &gt; {data.description4}
+                  </div>
                 </div>
-                <div className="topic_desc" id="topic_desc_2">
-                  {data.description2}
-                </div>
-                <div className="topic_desc" id="topic_desc_3">
-                  {data.description3}
-                </div>
-                <div className="topic_desc" id="topic_desc_4">
-                  {data.description4}
-                </div>
+
                 <div className="topic_desc" id="topic_desc_5">
                   <Link to={"/lp"} state={{ state: data.name }}>
-                    <button className="buttonTop">Start</button>
+                    <button className="buttonTop">Lesson</button>
                   </Link>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h1 id="exerciseH1">Exercises</h1>
-        <div className="topicCont">
-          {exercises.map(({ id, data }) => (
-            <div
-              key={id}
-              className="topic"
-              style={{ backgroundImage: "url(" + data.image + ")" }}
-            >
-              <div className="topic_name exercises_bg">{data.name}</div>
-              <div className="topic_desc_bg exercises_bg">
-                <div className="topic_desc" id="topic_desc_1">
-                  {data.description1}
-                </div>
-                <div className="topic_desc" id="topic_desc_2">
-                  {data.description2}
-                </div>
-                <div className="topic_desc" id="topic_desc_3">
-                  {data.description3}
-                </div>
-                <div className="topic_desc" id="topic_desc_4">
-                  {data.description4}
-                </div>
-                <div className="topic_desc" id="topic_desc_5">
                   <Link to={"/ep"} state={{ state: data.name }}>
-                    <button className="buttonEx">Start</button>
+                    <button className="buttonTop">Exercise</button>
                   </Link>
                 </div>
               </div>

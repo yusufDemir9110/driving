@@ -51,18 +51,6 @@ function LessonPage() {
             )}
           </div>
         ))}
-        {current === length - 1 ? (
-          <div class="lessonsFinishCont">
-            <p>This lesson is over. </p>
-            <p>You can repeat the topics if you want.</p>
-            <p>Or</p>
-            <p>
-              <Link to="/">
-                <strong>Click to return to the homepage</strong>
-              </Link>
-            </p>
-          </div>
-        ) : null}
       </div>
     </div>
   );

@@ -1,17 +1,4 @@
 import React, { useEffect, useState } from "react";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarToggler,
-  Collapse,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from "reactstrap";
 import { Link } from "react-router-dom";
 import "../styles/Navi.css";
 import { collection, onSnapshot } from "firebase/firestore";
@@ -20,18 +7,9 @@ import db from "../firebase/firebase";
 
 function Navi() {
   const [topics, setTopics] = useState([]);
-  const [exercises, setExercises] = useState([]);
   useEffect(() => {
     onSnapshot(collection(db, "topics-data"), (snapshot) =>
       setTopics(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
-      )
-    );
-    onSnapshot(collection(db, "exercises-data"), (snapshot) =>
-      setExercises(
         snapshot.docs.map((doc) => ({
           id: doc.id,
           data: doc.data(),
@@ -60,7 +38,7 @@ function Navi() {
           <li class="menuSubItems">
             Exercises
             <ul class="subUl">
-              {exercises.map(({ id, data }) => (
+              {topics.map(({ id, data }) => (
                 <Link to={"/ep"} state={{ state: data.name }}>
                   <li key={id}>{data.name}</li>
                 </Link>

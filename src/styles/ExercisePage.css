@@ -33,13 +33,13 @@
   top: 50%;
   right: 20px;
   font-size: 3rem;
-  color: darkblue !important;
+  color: red !important;
   z-index: 10;
   cursor: pointer;
   user-select: none;
-  border: 3px groove blue;
+  border: 3px groove darkred;
   border-radius: 50%;
-  background-color: rgb(255, 255, 151);
+  background-color: white;
 }
 
 .left-arrow {
@@ -47,17 +47,17 @@
   top: 50%;
   left: 20px;
   font-size: 3rem;
-  color: darkblue !important;
+  color: red !important;
   z-index: 10;
   cursor: pointer;
   user-select: none;
-  border: 3px groove blue;
+  border: 3px groove darkred;
   border-radius: 50%;
-  background-color: rgb(255, 255, 151);
+  background-color: white;
 }
 .right-arrow:active,
 .left-arrow:active {
-  border: 5px ridge blue;
+  border: 5px ridge darkred;
   background-color: rgb(255, 255, 74);
 }
 .data {

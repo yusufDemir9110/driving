@@ -72,7 +72,7 @@ nav li {
     left: 0;
   }
   to {
-    left: 120px;
+    left: 110px;
   }
 }
 @keyframes slideLi-y {
@@ -112,5 +112,12 @@ nav ul.subUl li {
   width: 100%;
 }
 nav li:hover {
-  color: #ffa279;
+  color: #73c5ff;
+}
+
+@media screen and (max-width: 768px) {
+  .mainUl > li:nth-child(1),
+  .mainUl > li:nth-child(2) {
+    display: none;
+  }
 }
