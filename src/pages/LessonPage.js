@@ -36,8 +36,6 @@ function LessonPage() {
   return (
     <div className="slideBody">
       <div className="mainSlide">
-        <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
-        <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
         {lessons.map(({ id, data }, index) => (
           <div className={index === current ? "data active" : "data"} key={id}>
             {index === current && (
@@ -46,7 +44,14 @@ function LessonPage() {
                 <div className="dataImageLesson">
                   <img src={data.image}></img>
                 </div>
-                <div className="dataDesc">{data.description}</div>
+                <div
+                  className="dataDesc"
+                  dangerouslySetInnerHTML={{ __html: data.description }}
+                ></div>
+                <div className="buttonCont">
+                  <button onClick={prevSlide}>Prev</button>
+                  <button onClick={nextSlide}>Next</button>
+                </div>
               </div>
             )}
           </div>

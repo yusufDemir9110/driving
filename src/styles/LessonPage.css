@@ -1,23 +1,33 @@
 .slideBody {
   background-color: white;
 }
-
 .mainSlide {
-  display: grid;
-  place-content: center;
-  height: 100vh;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
 }
 .slide {
-  display: grid;
-  place-content: center;
-  justify-items: center;
-  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.buttonCont {
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.buttonCont button {
+  margin: 10px 20px;
+  padding: 5px 15px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
 }
 .dataHeadLesson {
   width: 100%;
-  position: relative;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
@@ -28,44 +38,13 @@
 .dataDesc {
   width: 100%;
   position: relative;
-  top: 20px;
   text-align: justify;
   font-size: 1rem;
   font-weight: 500;
   text-indent: 15px;
-  padding: 1% 10%;
 }
-.right-arrow {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  font-size: 3rem;
-  color: darkblue !important;
-  z-index: 10;
-  cursor: pointer;
-  user-select: none;
-  border: 3px groove blue;
-  border-radius: 50%;
-  background-color: rgb(255, 255, 151);
-}
-
-.left-arrow {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  font-size: 3rem;
-  color: darkblue !important;
-  z-index: 10;
-  cursor: pointer;
-  user-select: none;
-  border: 3px groove blue;
-  border-radius: 50%;
-  background-color: rgb(255, 255, 151);
-}
-.right-arrow:active,
-.left-arrow:active {
-  border: 5px ridge blue;
-  background-color: rgb(255, 255, 74);
+.dataDesc p {
+  margin-bottom: 5px !important;
 }
 
 .data {
@@ -73,23 +52,29 @@
   transition-duration: 1s ease;
   width: 90%;
   position: relative;
-  left: 5%;
-}
-
-.data.active {
-  width: 90%;
-  position: relative;
-  left: 5%;
-  opacity: 1;
-  transition-duration: 1s;
-  transform: scale(1.08);
-}
-.lessonsFinishCont {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 10px;
+}
+
+.data.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  position: relative;
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
+
+@media screen and (max-width: 768px) {
+  .mainSlide {
+    margin: 40px;
+  }
+  .dataImageLesson > img {
+    width: 300px;
+  }
 }

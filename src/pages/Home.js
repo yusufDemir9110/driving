@@ -67,40 +67,30 @@ function Home() {
           practice exams
         </h3>
         <p>
-          <img src={cone} />
-          In Netherlands, driver's license theory exam consists of 3 parts. If
-          you can't get enough correct answers in any part, the exam ends
-          automatically.
+          &gt;&gt;In Netherlands, to get a B driver's license, you must pass the
+          theory exam and the driving test.
         </p>
-        <ul>
-          <li>
-            <img src={cone} />
-            In the first part of 25 questions, they want you to decide what to
-            do by looking at a traffic scenario (photo) that appears on the
-            screen. You must get at least 13 correct. The choices are always the
-            same:
-            <ol>
-              <li>Brake</li>
-              <li>Release the accelerator</li>
-              <li>Nothing</li>
-            </ol>
-          </li>
-          <li>
-            <img src={cone} />
-            There are 12 questions in the second part. You must get at least 10
-            correct.
-          </li>
-          <li>
-            <img src={cone} />
-            There are 28 questions in the second part. You must get at least 25
-            correct.
-          </li>
-        </ul>
         <p>
-          <img src={cone} />
-          Funny Driving License will be an excellent assistant for you about the
-          theory exam. We still strongly recommend you to apply for professional
-          courses.
+          &gt;&gt;There are 2 organizations responsible for obtaining driver's
+          licenses and conducting driver's license exams:
+          <ul>
+            <li>
+              - Road Transport Authority-RDW (Rijksdienst voor het Wegverkeer):
+              The RDW institution carries out the license work and transactions
+              and also carries out inspections.
+            </li>
+            <li>
+              - Centraal Bureau Rijvaardigheid (Centraal Bureau Rijvaardigheid):
+              The CBR is the agency responsible for conducting driver
+              examinations for all motor vehicles in the Netherlands, including
+              cars, mopeds, motorcycles and trucks.
+            </li>
+          </ul>
+        </p>
+        <p>
+          &gt;&gt;Funny Driving License will be an excellent assistant for you
+          about the B driver's license theory exam. We also strongly recommend
+          you to apply for professional courses.
         </p>
       </main>
 
