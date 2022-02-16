@@ -2,7 +2,6 @@ import { collection, onSnapshot } from "firebase/firestore";
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import db from "../firebase/firebase";
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import "../styles/ExercisePage.css";
 import { useNavigate } from "react-router-dom";
 import { Modal, Button } from "react-bootstrap";

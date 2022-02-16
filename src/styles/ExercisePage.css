@@ -1,5 +1,13 @@
 .mainSlideExercise {
-  margin-top: 30px;
+  margin: 40px 20px 10px 20px;
+}
+.dataImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dataImage img {
+  max-width: 768px;
 }
 .dataQue {
   border: 3px solid darkblue;
@@ -8,7 +16,6 @@
   border-radius: 5px;
   margin: 10px;
   padding: 0 10px 0 10px;
-
   font-weight: 600;
 }
 .queIndex {
@@ -84,4 +91,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .dataImage img {
+    max-width: 350px;
+  }
+  .finishExam {
+    margin-top: 30px 20px 20px 20px;
+    padding: 5px 20px;
+  }
 }
