@@ -81,14 +81,16 @@ function ExercisePageFinal() {
                                 ) : (
                                   <div className="templateWrong"></div>
                                 )}
-                                {state.userAnswers[index]}
+                                <p>{state.userAnswers[index]}</p>
                               </div>
                             </div>
                           </Col>
                           <Col xs="6">
                             <div>
                               <span className="answerHead">Correct Answer</span>
-                              <div className="answer">{data.rightOption}</div>
+                              <div className="answer">
+                                <p>{data.rightOption}</p>
+                              </div>
                             </div>
                           </Col>
                         </Row>

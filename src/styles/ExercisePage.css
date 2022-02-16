@@ -1,7 +1,11 @@
+.mainSlideExercise {
+  margin-top: 30px;
+}
 .dataQue {
-  border: 2px groove darkgreen;
+  border: 3px solid darkblue;
+  background-color: blue;
+  color: white;
   border-radius: 5px;
-  background-color: rgb(238, 157, 52);
   margin: 10px;
   padding: 0 10px 0 10px;
 
@@ -12,8 +16,9 @@
   top: -15px;
   left: -25px;
   padding: 0 20px 0 20px;
-  background-color: brown;
-  border: 2px groove darkgreen;
+  color: white;
+  background-color: darkblue;
+  border: 2px groove blue;
   border-radius: 15px;
 }
 .queText {
@@ -22,12 +27,10 @@
 }
 
 .options {
-  color: white;
   border: 2px groove darkblue;
   border-radius: 5px;
-  background-color: blue;
-  margin: 11px 5px 10px 5px;
-  padding: 5px;
+  margin: 11px 30px;
+  padding: 5px 10px;
   cursor: pointer;
   font-weight: 600;
 }
@@ -38,10 +41,10 @@
 }
 
 .selected {
-  border: 2px groove darkgreen;
+  border: 2px groove black;
   border-radius: 5px;
-  background-color: aquamarine;
-  margin: 10px;
+  background-color: yellow;
+  margin: 11px 30px;
   padding: 5px;
   cursor: pointer;
   font-weight: 600;
@@ -54,14 +57,16 @@
   background-color: red;
   color: white;
   border: 2px groove darkred;
-  margin: 100px 20px 50px 20px;
+  margin: 50px 20px 20px 20px;
   padding: 10px 25px;
 }
 .changeAnswer {
   border-radius: 10px;
-  background-color: bisque;
+  background-color: white;
   color: black;
-  border: 2px groove darkblue;
+  border: 2px groove black;
+  font-weight: 600;
+  margin-bottom: 40px;
 }
 .changeAnswerContainer {
   display: flex;

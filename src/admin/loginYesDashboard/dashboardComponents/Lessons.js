@@ -20,7 +20,7 @@ function Lessons({ language }) {
     lesson[e.target.id] = e.target.value;
     setLesson({ ...lesson, lesson });
 
-    if (lesson.id !== "" && lesson.description !== "" && lesson.head !== "") {
+    if (lesson.id !== "" && lesson.head !== "") {
       setDisabled(false);
     } else {
       setDisabled(true);

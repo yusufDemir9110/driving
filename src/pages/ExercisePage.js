@@ -70,14 +70,6 @@ function ExercisePage() {
         </Modal.Footer>
       </Modal>
       <div className="mainSlideExercise">
-        <FaArrowAltCircleLeft
-          className="left-arrow"
-          onClick={(e) => prevSlide(e)}
-        />
-        <FaArrowAltCircleRight
-          className="right-arrow"
-          onClick={(e) => nextSlide(e)}
-        />
         {exercises.map(({ id, data }, index) => (
           <div className={index === current ? "data active" : "data"} key={id}>
             {index === current && (
@@ -86,7 +78,7 @@ function ExercisePage() {
                   <img src={data.image}></img>
                 </div>
                 <div className="dataQue">
-                  <span className="queIndex">soru {index + 1}</span>
+                  <span className="queIndex">Question {index + 1}</span>
                   <div className="queText">
                     &nbsp;&nbsp;&nbsp;{data.question}
                   </div>
@@ -119,6 +111,10 @@ function ExercisePage() {
                         </div>
                       ))
                   )}
+                </div>
+                <div className="buttonCont">
+                  <button onClick={prevSlide}>Prev</button>
+                  <button onClick={nextSlide}>Next</button>
                 </div>
               </div>
             )}
