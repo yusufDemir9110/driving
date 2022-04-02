@@ -68,6 +68,9 @@ function ExercisePageFinal() {
                 {results.map(({ id, data }, index) => {
                   return (
                     <div className="queContainer" key={id}>
+                      <div className="queImage">
+                        <img src={data.image}></img>
+                      </div>
                       <div className="que">{data.question}</div>
                       <div>
                         <Row>

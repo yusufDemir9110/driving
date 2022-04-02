@@ -26,7 +26,7 @@ function Navi() {
       <div class="menuMainItems">
         <ul class="mainUl">
           <li class="menuSubItems">
-            Topics
+            Lessons
             <ul class="subUl">
               {topics.map(({ id, data }) => (
                 <Link to={"/lp"} state={{ state: data.name }}>

@@ -6,13 +6,15 @@
   background-position: bottom;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
 .paper h2,
-h4 {
+.paper h4 {
   color: white;
+  position: relative;
+  bottom: 140px;
 }
 
 .topic {
@@ -149,7 +151,7 @@ h4 {
   border: 2px groove rgba(0, 0, 0, 0, 5);
 }
 .buttonTop:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .buttonTop:active {
@@ -168,7 +170,6 @@ main ul li {
   margin: 5px 0;
 }
 main ol li {
-  list-style: upper-latin;
   margin-left: 40px;
 }
 main img {
@@ -203,6 +204,11 @@ h1 {
 @media screen and (max-width: 768px) {
   .paper {
     height: 38vh;
+  }
+  .paper h2,
+  .paper h4 {
+    bottom: 10px;
+    font-size: 0.8rem;
   }
   .topicCont {
     grid-template-columns: 90%;

@@ -3,12 +3,10 @@ import React, { useState, useEffect } from "react";
 import db from "../firebase/firebase";
 import { Link } from "react-router-dom";
 import "../styles/HomePage.css";
-import { Col, Row } from "reactstrap";
 import Navi from "../components/Navi";
 import Footer from "../components/Footer";
 import Carousel from "react-material-ui-carousel";
-import { Paper, Button } from "@mui/material";
-import cone from "../assets/cone.png";
+import { Paper } from "@mui/material";
 
 function Home() {
   const [slides, setSlides] = useState([]);
@@ -95,7 +93,7 @@ function Home() {
       </main>
 
       <section>
-        <h1 id="lessonH1">Lessons</h1>
+        <h1 id="lessonH1">Lessons and Exercises</h1>
         <div className="topicCont">
           {topics.map(({ id, data }) => (
             <div

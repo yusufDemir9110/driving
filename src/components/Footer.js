@@ -6,7 +6,7 @@ class Footer extends Component {
     return (
       <footer>
         <div>
-          <h4>Usefull Links</h4>
+          <h3>Usefull Links</h3>
           <div className="footerImg">
             <div>
               <div>
@@ -25,9 +25,9 @@ class Footer extends Component {
           </div>
         </div>
         <div>
-          <h4>Desgined By</h4>
+          <h3>Designed By</h3>
           <div className="footerDesigner">
-            <p>Tunahan Dizdaroglu</p>
+            <p>Mesut Demirturk</p>
             <p>Yusuf Demir</p>
             <p>Fatih Sancaktar</p>
           </div>
